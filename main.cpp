@@ -5,6 +5,7 @@
 #include <random>
 #include <thread>
 
+
 std::string GenerateUID() {
     uuid_t uuid;
     uuid_generate_random(uuid);
@@ -14,6 +15,7 @@ std::string GenerateUID() {
 
     return std::string(uuidStr);
 }
+
 
 class Person {
 private:
@@ -184,6 +186,7 @@ void Simulate(Room& roomA, Room& roomB, int T) {
     return;
 }
 
+
 void PersonInfo(std::string uid, Room& roomA, Room& roomB){
     
     if (roomA.PersonIn(uid)){
@@ -205,6 +208,8 @@ void PersonInfo(std::string uid, Room& roomA, Room& roomB){
     }
     return;
 }
+
+
 
 int main() {
     
