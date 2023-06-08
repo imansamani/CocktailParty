@@ -10,10 +10,10 @@ timestep, another person will be chosen at random to approach another etc. etc. 
 there are no more possible groupings in Room A or timestep T is reached.
 
 Also, if for each timestep, you could :
-- have the sim pause for 1 second or so before moving onto the next timestep
-- print out text describing the interaction (who greeted whom and whether their interests matched)
+1. have the sim pause for 1 second or so before moving onto the next timestep
+2. print out text describing the interaction (who greeted whom and whether their interests matched)
 that happened in the timestep
-- have the sim print out its internal state (who is in which room and who is in a group) at the end of
+3. have the sim print out its internal state (who is in which room and who is in a group) at the end of
 the interaction
-- Finally, write a function that could be called from the main event loop that, given an id #, prints a
+4. Finally, write a function that could be called from the main event loop that, given an id #, prints a
 Person's interest and their location (Room A vs. Room B).
