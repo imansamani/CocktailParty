@@ -17,12 +17,8 @@ The simulation incorporates the following features:
 3. Internal State: The simulation prints its internal state, including who is in Room A and Room B, as well as the current grouping of individuals, at the end of each timestep.
 4. Person Information Retrieval: A function is provided to retrieve a person's interest and location (Room A or Room B) when given their ID. This function can be called from the main event loop.
 
-## Usage
+## Solution
 
-To run the simulation, follow these steps:
+The simulation is implemented in both Python and C++. In both source codes, there are two objects: Person and Room. Each person is assigned a unique ID based on their interest, and initially, their location is set to null. Once a person moves to a room, their location is updated accordingly. Internally, the interests of the individuals are stored after moving them to Room A, and the count of persons with the same interest is maintained. The interest information is updated when a person leaves the room. This approach allows for checking if there is a possible grouping at each timestep.
 
-1. Clone the repository:
-
-   ```shell
-   git clone https://github.com/your-username/cocktail-party-simulation.git
-
+To optimize access to the interests and person information, hash maps are used, resulting in constant access time regardless of the simulation size N. In Python, this results in O(1) time complexity and O(N) space complexity per timestep. However, in the C++ code, since randomly selecting a person from Room A requires scanning the hash map, the time complexity becomes O(N), while the space complexity remains O(N).
